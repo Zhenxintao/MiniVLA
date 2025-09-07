@@ -1,0 +1,12 @@
+{
+    "input_dim_w": 7,
+    "input_dim_h": 8,
+    "n_latent_dims": 512,
+    "vqvae_n_embed": 128,
+    "vqvae_groups": 7,
+    "eval": false,
+    "device": "cuda",
+    "load_dir": null,
+    "encoder_loss_multiplier": 1.0,
+    "act_scale": 1.0
+}
