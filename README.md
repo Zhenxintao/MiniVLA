@@ -137,7 +137,7 @@ We evaluated MiniVLA on **LIBERO desktop tasks**. Below are demonstrations:
 <td align="center">
   <b>Close the top drawer of the cabinet</b><br>
   <img src="./Results/success_close_the_top_drawer_of_the_cabinet.gif" width="220"><br>
-  ✅ Success: 18/20
+  ✅ Success: 19/20
 </td>
 <td align="center">
   <b>Put the black bowl in the top drawer of the cabine</b><br>
@@ -163,27 +163,27 @@ We evaluated MiniVLA on **LIBERO desktop tasks**. Below are demonstrations:
 
 <tr>
 <td align="center">
-  <b>Place Mug in Front</b><br>
+  <b>Put the yellow and white mug to the front of the white mug</b><br>
   <img src="./Results/success_put_the_yellow_and_white_mug_to_the_front_of_the_white_mug.gif" width="220"><br>
   ✅ Success: 18/20
 </td>
 <td align="center">
-  <b>Pick Bowl → Tray</b><br>
+  <b>Pick up the black bowl on the left and put it in the tray</b><br>
   <img src="./Results/success_pick_up_the_black_bowl_on_the_left_and_put_it_in_the_tray.gif" width="220"><br>
   ✅ Success: 19/20
 </td>
 <td align="center">
-  <b>Pick Book → Left Caddy</b><br>
+  <b>Pick up the book and place it in the left compartment of the caddy</b><br>
   <img src="./Results/success_pick_up_the_book_and_place_it_in_the_left_compartment_of_the_caddy.gif" width="220"><br>
   ✅ Success: 18/20
 </td>
 <td align="center">
-  <b>Pick Middle Book → Shelf</b><br>
+  <b>Pick up the book in the middle and place it on the cabinet shelf</b><br>
   <img src="./Results/success_pick_up_the_book_in_the_middle_and_place_it_on_the_cabinet_shelf.gif" width="220"><br>
   ✅ Success: 17/20
 </td>
 <td align="center">
-  <b>Pick Left Book → Shelf Top</b><br>
+  <b>Pick up the book on the left and place it on top of the shelf</b><br>
   <img src="./Results/success_pick_up_the_book_on_the_left_and_place_it_on_top_of_the_shelf.gif" width="220"><br>
   ✅ Success: 16/20
 </td>
