@@ -184,7 +184,7 @@ We evaluated MiniVLA on **LIBERO desktop tasks**. Below are demonstrations:
   ⚡ Success (TensorRT Hybrid): 18/20
 </td>
 <td align="center">
-  <b>Put the black bowl in the top drawer of the cabine</b><br>
+  <b>Put the black bowl in the top drawer of the cabinet</b><br>
   <img src="./Results/success_put_the_black_bowl_in_the_top_drawer_of_the_cabine.gif" width="220"><br>
   ✅ Success (Original): 19/20 <br>
   ⚡ Success (TensorRT Hybrid): 18/20
