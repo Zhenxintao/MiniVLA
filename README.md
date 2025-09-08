@@ -128,21 +128,63 @@ For simulation and reproducibility, experiments were conducted on a **local work
 
 We evaluated MiniVLA on **LIBERO desktop tasks**. Below are some success cases:
 
+## 🎬 Results
+
+We evaluated MiniVLA on **LIBERO desktop tasks**. Below are demonstrations:
+
 <table>
 <tr>
 <td align="center">
-  <b>Close Drawer 1</b><br>
-  <img src="./Results/success_close_the_top_drawer_of_the_cabinet.gif" width="250"><br>
+  <b>Close Top Drawer</b><br>
+  <img src="./Results/success_close_the_top_drawer_of_the_cabinet.gif" width="220"><br>
   ✅ Success: 18/20
 </td>
 <td align="center">
-  <b>Close Drawer 2</b><br>
-  <img src="./Results/success_close_the_top_drawer_of_the_cabinet_alt.gif" width="250"><br>
+  <b>Put Bowl in Top Drawer</b><br>
+  <img src="./Results/success_put_the_black_bowl_in_the_top_drawer_of_the_cabine.gif" width="220"><br>
   ✅ Success: 17/20
 </td>
 <td align="center">
   <b>Turn Off Stove</b><br>
-  <img src="./Results/success_turn_off_the_stove.gif" width="250"><br>
+  <img src="./Results/success_turn_off_the_stove.gif" width="220"><br>
+  ✅ Success: 16/20
+</td>
+<td align="center">
+  <b>Close Bottom Drawer</b><br>
+  <img src="./Results/success_close_the_bottom_drawer_of_the_cabinet.gif" width="220"><br>
+  ✅ Success: 18/20
+</td>
+<td align="center">
+  <b>Close Drawer & Place Bowl</b><br>
+  <img src="./Results/success_close_the_top_drawer_of_the_cabinet_and_put_the_black_bowl_on_top_of_it.gif" width="220"><br>
+  ✅ Success: 17/20
+</td>
+</tr>
+
+<tr>
+<td align="center">
+  <b>Place Mug in Front</b><br>
+  <img src="./Results/success_put_the_yellow_and_white_mug_to_the_front_of_the_white_mug.gif" width="220"><br>
+  ✅ Success: 18/20
+</td>
+<td align="center">
+  <b>Pick Bowl → Tray</b><br>
+  <img src="./Results/success_pick_up_the_black_bowl_on_the_left_and_put_it_in_the_tray.gif" width="220"><br>
+  ✅ Success: 19/20
+</td>
+<td align="center">
+  <b>Pick Book → Left Caddy</b><br>
+  <img src="./Results/success_pick_up_the_book_and_place_it_in_the_left_compartment_of_the_caddy.gif" width="220"><br>
+  ✅ Success: 18/20
+</td>
+<td align="center">
+  <b>Pick Middle Book → Shelf</b><br>
+  <img src="./Results/success_pick_up_the_book_in_the_middle_and_place_it_on_the_cabinet_shelf.gif" width="220"><br>
+  ✅ Success: 17/20
+</td>
+<td align="center">
+  <b>Pick Left Book → Shelf Top</b><br>
+  <img src="./Results/success_pick_up_the_book_on_the_left_and_place_it_on_top_of_the_shelf.gif" width="220"><br>
   ✅ Success: 16/20
 </td>
 </tr>
