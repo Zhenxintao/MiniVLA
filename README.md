@@ -62,8 +62,7 @@ pip install -r experiments/robot/libero/libero_requirements.txt
 # Step 7: (Optional) Enable Hybrid Acceleration with TensorRT
 # Download the pre-exported TensorRT vision encoder engine from Hugging Face:
 # https://huggingface.co/xintaozhen/MiniVLA
-
-# Run the TensorRT Vision Encoder microservice
+# After that Run the TensorRT Vision Encoder microservice
 cd tensorRT-scripts
 python tensorRT_vision_service.py
 
