@@ -135,27 +135,27 @@ We evaluated MiniVLA on **LIBERO desktop tasks**. Below are demonstrations:
 <table>
 <tr>
 <td align="center">
-  <b>close the top drawer of the cabinet</b><br>
+  <b>Close the top drawer of the cabinet</b><br>
   <img src="./Results/success_close_the_top_drawer_of_the_cabinet.gif" width="220"><br>
   ✅ Success: 18/20
 </td>
 <td align="center">
-  <b>put_the_black_bowl_in_the_top_drawer_of_the_cabine</b><br>
+  <b>Put the black bowl in the top drawer of the cabine</b><br>
   <img src="./Results/success_put_the_black_bowl_in_the_top_drawer_of_the_cabine.gif" width="220"><br>
   ✅ Success: 17/20
 </td>
 <td align="center">
-  <b>Turn Off Stove</b><br>
+  <b>Turn off the stove</b><br>
   <img src="./Results/success_turn_off_the_stove.gif" width="220"><br>
   ✅ Success: 16/20
 </td>
 <td align="center">
-  <b>Close Bottom Drawer</b><br>
+  <b>Close the bottom drawer of the cabinet</b><br>
   <img src="./Results/success_close_the_bottom_drawer_of_the_cabinet.gif" width="220"><br>
   ✅ Success: 18/20
 </td>
 <td align="center">
-  <b>Close Drawer & Place Bowl</b><br>
+  <b>Close the top drawer of the cabinet and put the black bowl on top of it</b><br>
   <img src="./Results/success_close_the_top_drawer_of_the_cabinet_and_put_the_black_bowl_on_top_of_it.gif" width="220"><br>
   ✅ Success: 17/20
 </td>
