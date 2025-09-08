@@ -126,10 +126,6 @@ For simulation and reproducibility, experiments were conducted on a **local work
 
 ## 🎬 Results
 
-We evaluated MiniVLA on **LIBERO desktop tasks**. Below are some success cases:
-
-## 🎬 Results
-
 We evaluated MiniVLA on **LIBERO desktop tasks**. Below are demonstrations:
 
 <table>
