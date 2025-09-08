@@ -7,13 +7,25 @@
 </p>
 
 
-MiniVLA is a modular and deployment-friendly Vision-Language-Action (VLA) framework, built on top of [OpenVLA-Mini](https://github.com/Stanford-ILIAD/openvla-mini) and optimized for **edge deployment** with TensorRT acceleration.
+MiniVLA is a lightweight, modular, and deployment-friendly Vision-Language-Action (VLA) framework.  
+It is built on top of [OpenVLA-Mini](https://github.com/Stanford-ILIAD/openvla-mini), and further optimized for **edge deployment** through a hybrid acceleration pipeline.  
+
+Key features include:
+- ⚡ **TensorRT acceleration**: Vision Encoder and LLM (Qwen-0.5B) exported into ONNX / TensorRT engines, reducing latency and GPU memory usage.  
+- 🖥️ **Edge-oriented design**: validated on 8 GB VRAM devices (RTX 4060 Laptop GPU) as a proxy for Jetson Orin Nano, achieving efficient memory utilization and real-time inference.  
+- 🌐 **FastAPI-based online service**: transforms offline evaluation scripts into a reusable inference API (`/act`), enabling interactive control.  
+- 🔄 **Hybrid PyTorch + TensorRT pipeline**: ensures compatibility and fallback while maximizing acceleration benefits.  
 
 ---
 
 ## 📦 Installation & Reproduction Guide
 
-We provide a complete step-by-step installation and reproduction pipeline for **OpenVLA-Mini + Prismatic + LIBERO90**.  
+This section provides step-by-step instructions to install **MiniVLA** and set up the hybrid acceleration pipeline (TensorRT + PyTorch) for **edge deployment** (e.g., Jetson Orin Nano or 8GB-class GPUs).  
+
+The pipeline includes:
+- Installing the MiniVLA project and its dependencies  
+- Enabling TensorRT acceleration for the Vision Encoder and LLM  
+- Preparing LIBERO for task evaluation  
 
 ### Quick Start
 
@@ -46,6 +58,14 @@ pip install -e .
 # ⚠️ Check that 'robosuite' version is exactly 1.4.0
 cd ../MiniVLA
 pip install -r experiments/robot/libero/libero_requirements.txt
+
+# Step 7: (Optional) Enable Hybrid Acceleration with TensorRT
+# Download the pre-exported TensorRT vision encoder engine from Hugging Face:
+# https://huggingface.co/xintaozhen/MiniVLA
+
+# Run the TensorRT Vision Encoder microservice
+cd tensorRT-scripts
+python tensorRT_vision_service.py
 
 # Run LIBERO evaluation script
 python experiments/robot/libero/run_libero_eval.py \
