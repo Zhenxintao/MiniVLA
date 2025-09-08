@@ -1,9 +1,9 @@
 # MiniVLA
 
 <p align="center">
-  <a href="https://huggingface.co/xintaozhen/MiniVLA">官方模型仓库 (Hugging Face)</a> |
-  <a href="./openvla_mini_reproduction_guide.md">复现环境 (Reproduction Guide)</a> |
-  <a href="https://libero-project.github.io/">LIBERO 项目</a>
+  <a href="https://huggingface.co/xintaozhen/MiniVLA">Hugging Face</a> |
+  <a href="#reproduction-guide">Reproduction Guide</a> |
+  <a href="#results">Results</a>
 </p>
 
 
@@ -18,23 +18,50 @@ We provide a complete step-by-step installation and reproduction pipeline for **
 ### Quick Start
 
 ```bash
-# Create conda environment
+# Step 1: Create conda environment
 conda create -n minivla python=3.10 -y
 conda activate minivla
 
-# Install PyTorch + CUDA
+# Step 2: Install PyTorch + CUDA (note: safetensors==0.4.3 is required)
 conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia -y
 
-# Clone repository
+# Step 3: Clone repository
 git clone https://github.com/Zhenxintao/MiniVLA.git
 cd MiniVLA
 
 # Install dependencies
 pip install -e .
-```
 
-👉 For the **full detailed guide**, including CUDA setup, flash-attn, VQ-VAE, and LIBERO evaluation:  
-📄 [Reproduction Guide](./openvla_mini_reproduction_guide.md)
+# Step 4: Install flash-attn (for efficient inference, required)
+# ⚠️ If you encounter CUDA_HOME errors, please check environment variable setup in Section 4.
+pip install packaging ninja
+pip install "flash-attn==2.5.5" --no-build-isolation
+
+# Step 5: Install LIBERO simulation platform
+git clone https://github.com/Lifelong-Robot-Learning/LIBERO.git
+cd LIBERO
+pip install -e .
+
+# Step 6: Install LIBERO evaluation dependencies
+# ⚠️ Check that 'robosuite' version is exactly 1.4.0
+cd ../MiniVLA
+pip install -r experiments/robot/libero/libero_requirements.txt
+
+# Run LIBERO evaluation script
+python experiments/robot/libero/run_libero_eval.py \
+  --model_family prismatic \
+  --pretrained_checkpoint /{Your model checkpoint path} \
+  --task_suite_name libero_90 \
+  --center_crop True \
+  --hf_token HF_TOKEN \
+  --num_trials_per_task 20
+
+
+```
+<a id="reproduction-guide"></a>
+👉 If you encounter complex environment issues, or want to **reproduce OpenVLA-Mini from scratch** (including CUDA setup, flash-attn, and environment variables), please refer to our detailed reproduction guides:  
+- 📄 [English Version](./Results/openvla_mini_reproduction_guide_en.md)  
+- 📄 [中文版](./Results/openvla_mini_reproduction_guide.md)  
 
 ---
 
@@ -124,6 +151,7 @@ For simulation and reproducibility, experiments were conducted on a **local work
 
 ---
 
+<a id="results"></a>
 ## 🎬 Results
 
 We evaluated MiniVLA on **LIBERO desktop tasks**. Below are demonstrations:
