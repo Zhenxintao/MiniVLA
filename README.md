@@ -135,12 +135,12 @@ We evaluated MiniVLA on **LIBERO desktop tasks**. Below are demonstrations:
 <table>
 <tr>
 <td align="center">
-  <b>Close Top Drawer</b><br>
+  <b>close the top drawer of the cabinet</b><br>
   <img src="./Results/success_close_the_top_drawer_of_the_cabinet.gif" width="220"><br>
   ✅ Success: 18/20
 </td>
 <td align="center">
-  <b>Put Bowl in Top Drawer</b><br>
+  <b>put_the_black_bowl_in_the_top_drawer_of_the_cabine</b><br>
   <img src="./Results/success_put_the_black_bowl_in_the_top_drawer_of_the_cabine.gif" width="220"><br>
   ✅ Success: 17/20
 </td>
