@@ -161,13 +161,6 @@ For simulation and reproducibility, experiments were conducted on a **local work
 
 ⚠️ **Note**: While the experiments were run on an RTX 4060 Laptop GPU (8 GB VRAM), the device mainly serves as a proxy to evaluate **memory constraints** comparable to Jetson Orin Nano. Absolute inference speed on Jetson devices may be slower due to lower computational power, but the memory utilization trends remain consistent.  
 
-### GPU Memory Utilization (Long-Sequence Tasks)
-
-| Model Variant                           | Avg. GPU Utilization | Peak GPU Utilization |
-| --------------------------------------- | -------------------- | -------------------- |
-| Original MiniVLA (PyTorch, no TRT)      | ~65%                 | ~78%                 |
-| MiniVLA w/ TensorRT Vision Acceleration | ~43%                 | ~57%                 |
-
 ---
 
 <a id="results"></a>
@@ -178,11 +171,11 @@ The experiments cover **GPU memory utilization**, **latency breakdown**, and an 
 
 ### 1. GPU Memory Utilization
 
-| Model Variant              | Memory Usage | Avg. GPU Util. | Peak GPU Util. |
+| Model Variant               | Memory Usage | Avg. GPU Util. | Peak GPU Util. |
 |-----------------------------|--------------|----------------|----------------|
-| Baseline MiniVLA (PyTorch)  | 4115 MiB     | ~67%           | ~80%           |
-| MiniVLA (TRT Vision)        | 3892 MiB     | ~41%           | ~57%           |
-| MiniVLA (TRT Vision + LLM)  | 3292 MiB     | ~35%           | ~50%           |
+| Baseline MiniVLA (PyTorch)  | 4115/8188MiB | ~67%           | ~80%           |
+| MiniVLA (TRT Vision)        | 3892/8188MiB | ~41%           | ~57%           |
+| MiniVLA (TRT Vision + LLM)  | 3292/8188MiB | ~35%           | ~50%           |
 
 ➡️ **Observation**: Vision-only TensorRT reduces memory by ~223 MiB and lowers peak GPU utilization by ~23%.  
 Full Vision+LLM acceleration achieves lowest memory usage (3292 MiB), but leads to invalid outputs (0% success).  
