@@ -171,7 +171,53 @@ For simulation and reproducibility, experiments were conducted on a **local work
 ---
 
 <a id="results"></a>
-## 🎬 Results
+## 📊 Experimental Results
+
+We comprehensively evaluated **MiniVLA** under different acceleration strategies (PyTorch baseline vs. TensorRT hybrid).  
+The experiments cover **GPU memory utilization**, **latency breakdown**, and an **ablation study**.
+
+### 1. GPU Memory Utilization
+
+| Model Variant              | Memory Usage | Avg. GPU Util. | Peak GPU Util. |
+|-----------------------------|--------------|----------------|----------------|
+| Baseline MiniVLA (PyTorch)  | 4115 MiB     | ~67%           | ~80%           |
+| MiniVLA (TRT Vision)        | 3892 MiB     | ~41%           | ~57%           |
+| MiniVLA (TRT Vision + LLM)  | 3292 MiB     | ~35%           | ~50%           |
+
+➡️ **Observation**: Vision-only TensorRT reduces memory by ~223 MiB and lowers peak GPU utilization by ~23%.  
+Full Vision+LLM acceleration achieves lowest memory usage (3292 MiB), but leads to invalid outputs (0% success).  
+
+---
+
+### 2. Latency Breakdown (ms)
+
+| Module            | Baseline | Hybrid (Vision) | Hybrid (Vision+LLM) |
+|-------------------|----------|-----------------|----------------------|
+| Image Preprocess  | 15       | 15              | 15                   |
+| Vision Encoder    | 138      | 47              | 47                   |
+| LLM Inference     | 202      | 202             | 120                  |
+| Action Decoding   | 10       | 10              | 10                   |
+| **End-to-End**    | **365**  | **274**         | **192**              |
+
+➡️ **Observation**: Vision encoder acceleration reduces latency by –65.9% (138 → 47 ms).  
+Overall latency improves by –24.9% (365 → 274 ms).  
+Further LLM acceleration reduces latency to 192 ms but yields invalid results.  
+
+---
+
+### 3. Ablation Study
+
+| Configuration | Latency (ms) | Peak GPU Util. (%) | Memory (MiB) | Success (%) |
+|---------------|--------------|---------------------|--------------|-------------|
+| A: Baseline (PyTorch) | 365 | 80 | 4115 | 80.0 |
+| B: Vision Only (TRT)  | 274 | 57 | 3892 | 75.5 |
+| C: Vision+LLM (TRT)   | 192 | 50 | 3292 | 0.0 |
+
+➡️ **Observation**: The best efficiency–effectiveness trade-off is achieved with **Vision-only TensorRT**.  
+Full Vision+LLM acceleration yields lowest latency but invalid outputs (0% success).  
+
+---
+## 🎬 Task Results
 
 We evaluated MiniVLA on **LIBERO desktop tasks**. Below are demonstrations:
 
